@@ -3,7 +3,7 @@ import { getRandom } from './util.js';
 // генерация фоторгафии
 const generatePhoto = (number) => ({
     id: number,
-    url: `photos/${  number + 1  }.jpg`,
+    url: `photos/${  number+1  }.jpg`,
     description: `look at my cat!!`,
     likes: getRandom(15, 200),
     comments: getRandom(0, 200),

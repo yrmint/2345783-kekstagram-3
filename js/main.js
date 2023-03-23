@@ -1,3 +1,4 @@
+//module7 task2
 import { generatePhotos } from './data.js';
 import { insertPhotoMiniature } from './photoMiniature.js';
 

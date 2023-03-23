@@ -3,7 +3,7 @@ import { getRandom } from './util.js';
 // генерация фоторгафии
 const generatePhoto = (number) => ({
     id: number,
-    url: `photos/${  number  }.jpg`,
+    url: `photos/${  number + 1  }.jpg`,
     description: `look at my cat!!`,
     likes: getRandom(15, 200),
     comments: getRandom(0, 200),
@@ -14,8 +14,8 @@ const generatePhoto = (number) => ({
   
   // генерация массива фотографий
   export const generatePhotos = (number) => {
-    for(let i = 1; i <= number; i++) {
+    for(let i = 0; i < number; i++) {
       photos[i] = generatePhoto(i);
-      console.log(photos[i]);
     }
+    return photos;
   };

@@ -1,4 +1,5 @@
-import { generatePhotos } from "./data.js";
-generatePhotos(25);
+import { generatePhotos } from './data.js';
+import { insertPhotoMiniature } from './photoMiniature.js';
 
-console.log(generatePhotos(25));
+const photos = generatePhotos(25);
+insertPhotoMiniature(photos);

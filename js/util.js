@@ -1,5 +1,5 @@
 // генерация случайного числа
-export function getRandom(min, max) {
+export function getRandomInt(min, max) {
   if (min < 0 || max < 0) {
     return('Необходимо использовать только неотрицательные числа');
   }
@@ -20,3 +20,5 @@ export function getLength(str, maxLength) {
   }
   return false;
 }
+
+export const isEscapeKey = (e) => e.key === 'Escape';

@@ -12,11 +12,11 @@ const pristine  = new Pristine(form, {
 });
 
 pristine.addValidator(form.querySelector('.text__description'),
-validateComment, 'Комментарий не должен превышать 240 символов');
+  validateComment, 'Комментарий не должен превышать 240 символов');
 
 form.addEventListener('submit', (e) => {
   if (!pristine.validate()) {
-      e.preventDefault();
+    e.preventDefault();
   }
 });
 

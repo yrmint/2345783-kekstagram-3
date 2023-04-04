@@ -13,11 +13,11 @@ function cleanForm() {
 
 const onFormEscapeKeyDown = (e) => {
   if (isEscapeKey(e)) {
-      e.preventDefault();
-      closeDownloadWindow();
+    e.preventDefault();
+    closeDownloadWindow();
   }
-}
-  
+};
+
 function openDownloadWindow() {
   document.querySelector('.img-upload__overlay').classList.remove('hidden');
   document.body.addEventListener('keydown', onFormEscapeKeyDown);

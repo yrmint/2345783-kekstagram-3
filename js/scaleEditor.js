@@ -7,10 +7,10 @@ zoomOutElement.addEventListener('click', () => {
   const intScale = parseInt(scaleValueElement.value, 10);
   if (intScale > 25) {
     scaleValueElement.value = `${intScale - 25}%`;
-     imgElement.style = `transform: scale(${parseInt(scaleValueElement.value, 10) / 100})`;
+    imgElement.style = `transform: scale(${parseInt(scaleValueElement.value, 10) / 100})`;
   }
 });
-  
+
 zoomInElement.addEventListener('click', () => {
   const intScale = parseInt(scaleValueElement.value, 10);
   if (intScale < 100) {

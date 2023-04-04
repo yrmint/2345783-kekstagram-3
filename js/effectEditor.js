@@ -6,8 +6,8 @@ let oldEffect = 'effects__preview--none';
 
 const radios = document.querySelector('.img-upload__effects').querySelectorAll('input[name="effect"]');
 radios.forEach((radio) => {
-    radio.addEventListener('input', () => { setChosenEffect(); });
-  });
+  radio.addEventListener('input', () => { setChosenEffect(); });
+});
 
 function setChosenEffect() {
   for (const radio of radios) {

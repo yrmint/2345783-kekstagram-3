@@ -24,7 +24,7 @@ function openDownloadWindow() {
 }
 
 function closeDownloadWindow() {
-  document.querySelector('.img-upload__overlay');
+  document.querySelector('.img-upload__overlay').classList.add('hidden');
   document.body.classList.remove('modal-open');
   document.removeEventListener('keydown', onFormEscapeKeyDown);
   cleanForm();

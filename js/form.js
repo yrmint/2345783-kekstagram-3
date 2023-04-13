@@ -9,6 +9,10 @@ function cleanForm() {
   downloadButton.value = '';
   hashtag.value = '';
   comment.value = '';
+  imgElement.classList.remove(oldEffect);
+  imgElement.classList.add(`effects__preview--none`);
+  scaleValueElement.value = `100%`;
+  imgElement.style = `transform: scale(${parseInt(scaleValueElement.value, 10) / 100})`;
 }
 
 const onFormEscapeKeyDown = (e) => {

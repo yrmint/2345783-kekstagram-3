@@ -1,6 +1,6 @@
 import { isEscapeKey } from './util.js';
-import { oldEffect } from './effectEditor.js'
-import { scaleValueElement } from './scaleEditor.js'
+import { oldEffect } from './effectEditor.js';
+import { scaleValueElement } from './scaleEditor.js';
 import { validateComment } from './formValidator.js';
 import {
   openUploadSuccess,
@@ -20,17 +20,15 @@ function cleanForm() {
   hashtag.value = '';
   comment.value = '';
   imgElement.classList.remove(oldEffect);
-  imgElement.classList.add(`effects__preview--none`);
-  scaleValueElement.value = `100%`;
-  imgElement.style = `transform: scale(${parseInt(scaleValueElement.value, 10) / 100})`;
+  imgElement.classList.add('effects__preview--none');
+  scaleValueElement.value = '100%';
+  imgElement.style = 'transform: scale(${parseInt(scaleValueElement.value, 10) / 100})';
 
 }
 
 form.addEventListener('submit', (evt) => {
   evt.preventDefault();
   if (!validateComment(comment.value)) {
-    console.log("validation failed");
-    console.log(comment.value);
     return;
   }
   const formData = new FormData(evt.target);
@@ -44,7 +42,6 @@ form.addEventListener('submit', (evt) => {
     .then((response) => {
       if (response.ok) {
         closeDownloadWindow();
-        console.log('download successful');
         openUploadSuccess();
       } else {
         openUploadError();

@@ -20,6 +20,6 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-function validateComment(value) {
+export function validateComment(value) {
   return getLength(value, 140) && !getLength(value, 19);
 }

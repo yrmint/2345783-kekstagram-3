@@ -2,7 +2,7 @@ const imgElement = document.querySelector('.img-upload__preview');
 
 let chosenEffect = document.querySelector('.img-upload__effects').querySelectorAll('input[name="effect"]:checked');
 
-let oldEffect = 'effects__preview--none';
+export let oldEffect = 'effects__preview--none';
 
 const radios = document.querySelector('.img-upload__effects').querySelectorAll('input[name="effect"]');
 radios.forEach((radio) => {

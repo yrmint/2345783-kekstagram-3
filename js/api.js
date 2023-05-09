@@ -5,10 +5,16 @@ const errorMessageElement = document.querySelector('#error').content.querySelect
 const successButton = successMessageElement.querySelector('.success__button');
 const errorButton = errorMessageElement.querySelector('.error__button');
 
-const onEscapeKeyDown = (e) => {
+const onSuccessEscapeKeyDown = (e) => {
   if (isEscapeKey(e)) {
     e.preventDefault();
     closeUploadSuccess();
+  }
+};
+
+const onErrorEscapeKeyDown = (e) => {
+  if (isEscapeKey(e)) {
+    e.preventDefault();
     closeUploadError();
   }
 };
@@ -16,7 +22,7 @@ const onEscapeKeyDown = (e) => {
 function closeUploadSuccess() {
   successMessageElement.classList.add('hidden');
   document.removeEventListener('click', closeUploadSuccess);
-  document.removeEventListener('keydown', onEscapeKeyDown);
+  document.removeEventListener('keydown', onSuccessEscapeKeyDown);
 }
 
 function openUploadSuccess(){
@@ -26,13 +32,13 @@ function openUploadSuccess(){
   });
   successMessageElement.classList.remove('hidden');
   document.body.append(successMessageElement);
-  document.body.addEventListener('keydown', onEscapeKeyDown);
+  document.body.addEventListener('keydown', onSuccessEscapeKeyDown);
 }
 
 function closeUploadError() {
   errorMessageElement.classList.add('hidden');
   document.body.classList.add('modal-open');
-  document.removeEventListener('keydown', onEscapeKeyDown);
+  document.removeEventListener('keydown', onErrorEscapeKeyDown);
 }
 
 function openUploadError(){
@@ -43,7 +49,7 @@ function openUploadError(){
   errorMessageElement.classList.remove('hidden');
   document.body.classList.remove('modal-open');
   document.body.append(errorMessageElement);
-  document.body.addEventListener('keydown', onEscapeKeyDown);
+  document.body.addEventListener('keydown', onErrorEscapeKeyDown);
 }
 
 export {

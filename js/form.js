@@ -59,6 +59,7 @@ const onFormEscapeKeyDown = (e) => {
 
 function openDownloadWindow() {
   document.querySelector('.img-upload__overlay').classList.remove('hidden');
+  document.body.classList.add('modal-open');
   document.body.addEventListener('keydown', onFormEscapeKeyDown);
 }
 

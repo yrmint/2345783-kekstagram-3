@@ -1,7 +1,7 @@
 import { isEscapeKey } from './util.js';
-import { oldEffect } from './effectEditor.js';
+import { oldEffect, sliderElement } from './effectEditor.js';
 import { scaleValueElement } from './scaleEditor.js';
-import { validateComment } from './formValidator.js';
+import { validateComment, validateHashtag } from './formValidator.js';
 import {
   openUploadSuccess,
   openUploadError
@@ -23,12 +23,13 @@ function cleanForm() {
   imgElement.classList.add('effects__preview--none');
   scaleValueElement.value = '100%';
   imgElement.style = `transform: scale(${parseInt(scaleValueElement.value, 10) / 100})`;
+  sliderElement.classList.add('visually-hidden');
 
 }
 
 form.addEventListener('submit', (evt) => {
   evt.preventDefault();
-  if (!validateComment(comment.value)) {
+  if (!validateComment(comment.value) || !validateHashtag(hashtag.value)) {
     return;
   }
   const formData = new FormData(evt.target);

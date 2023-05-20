@@ -13,8 +13,8 @@ const pristine  = new Pristine(form, {
 
 pristine.addValidator(form.querySelector('.text__description'),
   validateComment, 'Длина комментария должна составлять от 20 до 140 символов');
-  
-pristine.addValidator(document.querySelector('.text__hashtags'), 
+
+pristine.addValidator(document.querySelector('.text__hashtags'),
   validateHashtag, 'Хештег начинается с #, длина не более 20 символов');
 
 form.addEventListener('submit', (e) => {
